@@ -1,8 +1,8 @@
 package com.outdd.oauth.core;
 
-import com.outdd.oauthcommon.config.JwtToken;
-import com.outdd.oauthcommon.exception.AuthExceptionEntryPoint;
-import com.outdd.oauthserver.config.MyRedisTokenStore;
+import com.outdd.oauth.config.MyRedisTokenStore;
+import com.outdd.oauthCommon.config.JwtToken;
+import com.outdd.oauthCommon.exception.AuthExceptionEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

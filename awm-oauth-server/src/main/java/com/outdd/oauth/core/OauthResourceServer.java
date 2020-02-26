@@ -1,8 +1,8 @@
 package com.outdd.oauth.core;
 
-import com.outdd.constants.Constants;
-import com.outdd.oauthcommon.exception.AuthExceptionEntryPoint;
-import com.outdd.oauthcommon.exception.CustomAccessDeniedHandler;
+import com.outdd.common.constants.Constants;
+import com.outdd.oauthCommon.exception.AuthExceptionEntryPoint;
+import com.outdd.oauthCommon.exception.CustomAccessDeniedHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
