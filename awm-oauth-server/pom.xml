@@ -6,7 +6,7 @@
         <groupId>com.outdd</groupId>
         <artifactId>awm-oauth-center</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <!--<relativePath>../pom.xml</relativePath>-->
     </parent>
     <groupId>com.outdd</groupId>
     <artifactId>awm-oauth-server</artifactId>
@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.outdd</groupId>
-            <artifactId>awm-oauth-center</artifactId>
+            <artifactId>awm-oauth-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
