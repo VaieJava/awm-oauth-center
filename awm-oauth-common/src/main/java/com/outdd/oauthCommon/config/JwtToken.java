@@ -51,7 +51,7 @@ public class JwtToken {
                 final Map<String, Object> additionalInformation = new HashMap<>();
                 additionalInformation.put("userName", userName);
                 additionalInformation.put("userId", user.getId());
-                additionalInformation.put("roles", user.getAuthorities());
+//                additionalInformation.put("roles", user.getAuthorities());
                 ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInformation);
                 OAuth2AccessToken enhancedToken = super.enhance(accessToken, authentication);
                 return enhancedToken;

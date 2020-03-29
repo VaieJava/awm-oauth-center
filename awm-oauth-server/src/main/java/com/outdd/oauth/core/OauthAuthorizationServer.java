@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -25,11 +26,10 @@ import javax.sql.DataSource;
  *
  * @Date: 2018/4/8 10:48
  */
+@Order(3)
 @Configuration
 @EnableAuthorizationServer
 public class OauthAuthorizationServer extends AuthorizationServerConfigurerAdapter {
-//
-//    OAuth2AuthenticationProcessingFilter
 
     @Autowired
     private WebResponseExceptionTranslator customWebResponseExceptionTranslator;
@@ -64,9 +64,10 @@ public class OauthAuthorizationServer extends AuthorizationServerConfigurerAdapt
      */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.allowFormAuthenticationForClients()
+        security
+//                .allowFormAuthenticationForClients()
                 .tokenKeyAccess("permitAll()")//isAuthenticated
-                .checkTokenAccess("permitAll()")
+                .checkTokenAccess("isAuthenticated()")
                 .authenticationEntryPoint(new AuthExceptionEntryPoint());
 
     }

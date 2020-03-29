@@ -21,7 +21,7 @@ public class AuthExceptionEntryPoint implements AuthenticationEntryPoint {
     @Override
  	public void commence(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException authException) throws ServletException {
- 
+
 		Map<String, Object> map = new HashMap<>();
 		//401 未授权
 		map.put("error", "401");
@@ -37,5 +37,28 @@ public class AuthExceptionEntryPoint implements AuthenticationEntryPoint {
 			throw new ServletException();
 		}
 	}
-	
+
+ 	public void commence1(HttpServletRequest request, HttpServletResponse response,
+			AuthenticationException authException) throws ServletException {
+
+		 try {
+		 } catch (Exception e) {
+			 throw new ServletException();
+		 }
+//		Map<String, Object> map = new HashMap<>();
+//		//401 未授权
+//		map.put("error", "4012");
+//		map.put("message", authException.getMessage());
+//		map.put("path", request.getServletPath());
+//		map.put("timestamp", String.valueOf(new Date().getTime()));
+//		response.setContentType("application/json");
+//		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+//		try {
+//			ObjectMapper mapper = new ObjectMapper();
+//			mapper.writeValue(response.getOutputStream(), map);
+//		} catch (Exception e) {
+//			throw new ServletException();
+//		}
+	}
+
 }
